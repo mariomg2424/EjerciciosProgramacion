@@ -37,10 +37,37 @@ public abstract class Ejemplos {
 		System.out.println(cadenaImprimir);
 	}
 	
+	public static void imprimirArrayEnterosAleatorios(int longitud) {
+		int arrayEnteros[]=new int[longitud]; //Esto va a ser 10
+		//Crear un array de 10 posiciones y llenarlo con números del 0 al 9
+		//e imprimirlo
+		for(int i=0;i<longitud;i++)
+			arrayEnteros[i]=Ejemplos.generarNumeroAleatorio(0, 10);
+		imprimirArrayEnteros(arrayEnteros);
+	}
+	
+	public static void imprimirArrayPersonasIndeterminadas(int longitud) {
+		//Pida por teclado tantos nombres como longitud tiene el array
+		//y los muestra por pantalla ("La persona 1 es Pepe", por ejemplo).
+	}
+	
+	public static void imprimirArrayEnteros(int arrayEnteros[]) {
+		String cadenaImprimir="{";
+		for(int i=0;i<arrayEnteros.length;i++) {
+			cadenaImprimir+=arrayEnteros[i];
+			if(i<arrayEnteros.length-1)
+				cadenaImprimir+=",";
+		}
+		cadenaImprimir+="}";
+		System.out.println(cadenaImprimir);	
+	}
+	
 	public static void imprimirArrayCuatroPersonas() {
 		String arrayPersonas[]= {"María","Luis","Manolo","Lola"};
 		for(int i=0;i<arrayPersonas.length;i++)
 			System.out.println("La persona "+(i+1)+" se llama "+arrayPersonas[i]);
-
 	}
+	
+	public static void imprimirLoteria() {}
+
 }

@@ -6,12 +6,13 @@ public class Aplicacion {
 
 	public Aplicacion() {
 		int opcion = -1;
-		Scanner s = new Scanner(System.in);
 		do {
+			Scanner s = new Scanner(System.in);
 			System.out.println("Escoge una opción:");
 			System.out.println("1) Generar cien números aleatorios.");
 			System.out.println("2) Imprimir array predefinido.");
 			System.out.println("3) Imprimir lista de personas.");
+			System.out.println("4) Imprimir array de enteros aleatorios.");
 			System.out.println("0) Salir.");
 			opcion = s.nextInt();
 			switch (opcion) {
@@ -28,9 +29,13 @@ public class Aplicacion {
 			case 3:
 				Ejemplos.imprimirArrayCuatroPersonas();
 				break;
+			case 4:
+				Ejemplos.imprimirArrayEnterosAleatorios(10);
+				break;
 			default:
 				System.out.println("Opción incorrecta.");
 			}
+			
 		} while (opcion != 0);
 	}
 
