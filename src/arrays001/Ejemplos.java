@@ -93,6 +93,17 @@ public abstract class Ejemplos {
 		System.out.println(cadenaImprimir);	
 	}
 	
+	public static String arrayEnterosToString(int arrayEnteros[]) {
+		String cadenaImprimir="{";
+		for(int i=0;i<arrayEnteros.length;i++) {
+			cadenaImprimir+=arrayEnteros[i];
+			if(i<arrayEnteros.length-1)
+				cadenaImprimir+=",";
+		}
+		cadenaImprimir+="}";
+		return cadenaImprimir;
+	}
+	
 	public static void imprimirArrayCuatroPersonas() {
 		String arrayPersonas[]= {"María","Luis","Manolo","Lola"};
 		for(int i=0;i<arrayPersonas.length;i++)
@@ -127,19 +138,24 @@ public abstract class Ejemplos {
 	}
 	
 	public static boolean estaOrdenadoAscendentemente(int array[]) {
+		imprimirTraza("Comprobando si "+arrayEnterosToString(array)+" está ordenado ascendentemente.");
 		boolean estaOrdenado=true;
 		for(int i=0;i<array.length-1;i++) {
-			imprimirTraza("Comparando array["+i+"] con array["+(i+1)+"]");
+			imprimirTraza("- Comparando array["+i+"] con array["+(i+1)+"]");
 			if(esMayor(array[i],array[i+1])) {
-				imprimirTraza(array[i]+" es mayor que "+array[i+1]);
+				imprimirTraza("  - "+array[i]+" es mayor que "+array[i+1]);
 				estaOrdenado=false;
 				break;
 			}
 		}
+		imprimirTraza("El resultado de la comprobación es "+estaOrdenado+".");
 		return estaOrdenado;
 	}
 	
+
+	
 	public static boolean estaOrdenadoDescendentemente(int array[]) {
+		imprimirTraza("Comprobando si el array "+array+" está ordenado descendentemente.");
 		boolean estaOrdenado=true;
 		for(int i=0;i<array.length-1;i++) {
 			imprimirTraza("Comparando array["+i+"] con array["+(i+1)+"]");
@@ -159,10 +175,24 @@ public abstract class Ejemplos {
 		else
 			return false;
 	}
-		
-	public static int[] ordenarArrayEnteros(int arrayEnteros[]) {
-		int arrayOrdenado[]=new int[arrayEnteros.length];
-		return arrayOrdenado;
+	
+
+	public static int[] ordenarArrayEnterosAscendentemente(int arrayEnteros[]) {
+		imprimirTraza("Ordenando el array "+arrayEnterosToString(arrayEnteros));
+		while(!estaOrdenadoAscendentemente(arrayEnteros)) {
+			imprimirTraza("Estado actual del array: "+arrayEnterosToString(arrayEnteros));
+			for(int i=0;i<arrayEnteros.length-1;i++) {
+				if(esMayor(arrayEnteros[i],arrayEnteros[i+1])) {
+					int aux=arrayEnteros[i+1];
+					arrayEnteros[i+1]=arrayEnteros[i];
+					arrayEnteros[i]=aux;
+					imprimirTraza("Intercambiando el "+arrayEnteros[i+1]+" por el "+arrayEnteros[i]);
+				}
+				imprimirTraza("Estado actual del array: "+arrayEnterosToString(arrayEnteros));
+			}
+		}
+		imprimirTraza("Estado final del array: "+arrayEnterosToString(arrayEnteros));
+		return arrayEnteros;
 	}
 	
 	public static void imprimirTraza(String mensaje) {
