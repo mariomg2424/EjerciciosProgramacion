@@ -6,9 +6,10 @@ public class Aplicacion {
 
 	public Aplicacion() {
 		int opcion = -1;
-		int array[]= {5,4,3,2,1};
-		System.out.println(Ejemplos.estaOrdenadoDescendentemente(array));
-		do {
+		
+		int array[]= {23,4,6,2};
+		Ejemplos.meterNumeroEnteroArrayOrdenado2(array, 1);
+			do {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Escoge una opción:");
 			System.out.println("1) Generar cien números aleatorios.");
@@ -19,6 +20,8 @@ public class Aplicacion {
 			System.out.println("6) Imprimir array de lotería.");
 			System.out.println("7) Comprobar si el array esta ordenado ascendentemente.");
 			System.out.println("8) Comprobar si el array esta ordenado descendentemente.");
+			System.out.println("9) Ordenar ascendentemente un array.");
+			System.out.println("10) Ordenar descendentemente un array.");
 			System.out.println("0) Salir.");
 			opcion = s.nextInt();
 			switch (opcion) {
@@ -49,6 +52,12 @@ public class Aplicacion {
 				break;
 			case 8:
 				Ejemplos.estaOrdenadoDescendentemente(array);
+				break;
+			case 9:
+				Ejemplos.ordenarArrayCreciente(array);
+				break;
+			case 10:
+				Ejemplos.ordenarArrayDecreciente(array);
 				break;
 			default:
 				System.out.println("Opción incorrecta.");
