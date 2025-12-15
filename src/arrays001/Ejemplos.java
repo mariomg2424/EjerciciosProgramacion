@@ -237,7 +237,7 @@ public abstract class Ejemplos {
 			
 	}
 	
-	public static void invertirElementosArray(int array[]) {
+	/*public static void invertirElementosArray(int array[]) {
 	Ejemplos.imprimirArrayEnterosPredefinido(array);
 	int a=0;
 	int b=array.length-1;
@@ -251,7 +251,7 @@ public abstract class Ejemplos {
 		imprimirArrayEnterosPredefinido(arrayI);
 	
 	}
-	
+	*/
 	public static int modaArray(int array[]) {
 		
 		int valorActual=0;
@@ -323,6 +323,17 @@ public abstract class Ejemplos {
 		imprimirArrayStrings(nombres);
 	}
 
+	public static String[] invertirArrayString (String array[]) {
+
+		for(int i=0;i<(array.length)/2;i++) {
+			String aux=array[i];
+			array[i]=array[array.length-1-i];
+			array[array.length-1-i]=aux;
+		}
+		
+		return array;
+		
+	}
 	
 }
 

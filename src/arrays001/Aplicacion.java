@@ -10,13 +10,14 @@ public class Aplicacion {
 		int array1[]={7,8,4,1,2};
 		int array2[]= {1,2,4,7,8};
 		int array3[]= {5,4,3,2,-1};
-		String array[]= {"Rocío","Ángeles","Luz","Carlos","Darío","Mario"};
+		String array[]= {"A","B","C","D","E","F"};
 		int array4[]= {58,59,18,18,18,54};
-		Ejemplos.ordenarPorEdad(array, array4);
+		//Ejemplos.ordenarPorEdad(array, array4);
+		//System.out.println(Ejemplos.imprimirArrayStrings(array));
+		//Ejemplos.devolverCambio(10000, 20000);
+		Ejemplos.invertirArrayString(array);
 		System.out.println(Ejemplos.imprimirArrayStrings(array));
-		Ejemplos.devolverCambio(10000, 20000);
-		Ejemplos.invertirElementosArray(array2);
-		Ejemplos.introducirEntero(6, array2);
+		//Ejemplos.introducirEntero(6, array2);
 		do {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Escoge una opción:");
